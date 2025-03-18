@@ -1,5 +1,5 @@
+import HeroPage from "@/components/constants/heroPage";
+
 export default function Home() {
-  return (
-    <h1>AI Assistance </h1>
-  );
+  return <HeroPage />;
 }

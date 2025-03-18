@@ -10,7 +10,7 @@ const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  title: "PDF companion",
+  title: "Companion iO",
   description:
     "Trying to convert file from pdf to docs and vice versa or you want a brief summary of the pdf file, pdf companion is the right place.",
 };
