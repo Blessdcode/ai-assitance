@@ -6,14 +6,14 @@ import Image from "next/image";
 const HeroPage = () => {
   return (
     <section className="boxWidth marginY boxMar">
-      <div className="flex flex-col md:flex-row items-center md:items-start md:justify-between">
+      <div className="flex flex-col md:flex-row items-center md:items-start md:justify-center">
         <div className="flex flex-col items-center md:items-start space-y-5 w-full md:w-1/2 text-center md:text-left">
-          <h1 className="heading1 tracking-tighter font-bold">
+          <h1 className="heading2 tracking-tighter font-bold">
             Making{" "}
             <span className="bg-gradient-to-r from-rose-500 to-rose-900 bg-clip-text text-transparent">
               Document
             </span>{" "}
-            Easy to use
+            Easy use
           </h1>
           <p className=" text-gray-700">
             Get the best tools to interact with your PDFs including summarizing
@@ -22,7 +22,10 @@ const HeroPage = () => {
           </p>
 
           <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-            <Button asChild variant="outline" className="border border-blue-500 hover:bg-blue-500 hover:text-white">
+            <Button
+              asChild
+              variant="outline"
+              className="border border-blue-500 hover:bg-blue-500 hover:text-white">
               <Link href="/payment">Start for free</Link>
             </Button>
             <Button asChild className="btn-primary">

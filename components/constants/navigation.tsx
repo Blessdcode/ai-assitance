@@ -1,9 +1,18 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import Link from "next/link";
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Separator } from "../ui/separator";
 import NavigationMenuComponent from "./dropdown";
+import {
+  ClerkProvider,
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from "@clerk/nextjs";
 
 const Navigation = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -37,9 +46,14 @@ const Navigation = () => {
         {/* Login/Signup Buttons */}
         <div className="hidden md:flex space-x-4">
           <div className="flexCenter space-x-4">
-            <Link href="/login" className="btn-primary">
-              Login
-            </Link>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
+            <SignedOut>
+              <Link href="/sign-in" className="btn-primary">
+                Login
+              </Link>
+            </SignedOut>
             <Separator
               orientation="vertical"
               className="h-full w-1.5 bg-gray-900"
