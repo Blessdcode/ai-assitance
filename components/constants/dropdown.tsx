@@ -19,6 +19,7 @@ import {
   FileLock,
 } from "lucide-react";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 const menuItems = [
   //   {
@@ -27,16 +28,18 @@ const menuItems = [
   //   },
   {
     title: "Convert to PDF",
+    id: "toPdf",
     items: [
       { name: "Word to PDF", icon: FileText, link: "/word-to-pdf" },
       { name: "Excel to PDF", icon: FileText, link: "/excel-to-pdf" },
       { name: "PPT to PDF", icon: FileText, link: "/ppt-to-pdf" },
       { name: "JPG to PDF", icon: FileText, link: "/jpg-to-pdf" },
-    //   { name: "PDF OCR", icon: Scan, link: "/pdf-ocr" },
+      //   { name: "PDF OCR", icon: Scan, link: "/pdf-ocr" },
     ],
   },
   {
     title: "Convert from PDF",
+    id: "fromPdf",
     items: [
       { name: "PDF to Word", icon: FileText, link: "/pdf-to-word" },
       { name: "PDF to Excel", icon: FileText, link: "/pdf-to-excel" },
@@ -46,6 +49,7 @@ const menuItems = [
   },
   {
     title: "Convert",
+    id: "convert",
     items: [
       { name: "PDF Converter", icon: Layers, link: "/convert-pdf" },
       { name: "AI PDF Summarizer", icon: FileText, link: "/ai-pdf-summarizer" },
@@ -59,6 +63,7 @@ const menuItems = [
   },
   {
     title: "Organize",
+    id: "organize",
     items: [
       { name: "Merge PDF", icon: Layers, link: "/merge-pdf" },
       { name: "Split PDF", icon: Layers, link: "/split-pdf" },
@@ -69,6 +74,7 @@ const menuItems = [
   },
   {
     title: "View & Edit",
+    id: "edit",
     items: [
       { name: "Edit PDF", icon: FileText, link: "/edit-pdf" },
       { name: "PDF Annotator", icon: FileText, link: "/pdf-annotator" },
@@ -80,26 +86,28 @@ const menuItems = [
     ],
   },
 
-//   {
-//     title: "Sign",
-//     items: [
-//       { name: "Sign PDF", icon: FileCheck, link: "/sign-pdf" },
-//       {
-//         name: "Request Signatures (Sign.com)",
-//         icon: FileCheck,
-//         link: "/request-signatures",
-//       },
-//     ],
-//   },
-//   {
-//     title: "More",
-//     items: [
-//       { name: "Unlock PDF", icon: Shield, link: "/unlock-pdf" },
-//       { name: "Protect PDF", icon: FileLock, link: "/protect-pdf" },
-//       { name: "Flatten PDF", icon: Shield, link: "/flatten-pdf" },
-//       { name: "Scan", icon: Scan, link: "/scan" },
-//     ],
-//   },
+  //   {
+  //     title: "Sign",
+  // id:""
+  //     items: [
+  //       { name: "Sign PDF", icon: FileCheck, link: "/sign-pdf" },
+  //       {
+  //         name: "Request Signatures (Sign.com)",
+  //         icon: FileCheck,
+  //         link: "/request-signatures",
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     title: "More",
+  // id:""
+  //     items: [
+  //       { name: "Unlock PDF", icon: Shield, link: "/unlock-pdf" },
+  //       { name: "Protect PDF", icon: FileLock, link: "/protect-pdf" },
+  //       { name: "Flatten PDF", icon: Shield, link: "/flatten-pdf" },
+  //       { name: "Scan", icon: Scan, link: "/scan" },
+  //     ],
+  //   },
 ];
 
 const NavigationMenuComponent = () => {
@@ -116,8 +124,18 @@ const NavigationMenuComponent = () => {
                 <div
                   key={menuItem.title}
                   title={menuItem.title}
-                  className="flexCol items-start justify-items-start">
-                  {menuItem.title}
+                  className="flexCol items-start justify-items-start ">
+                  <div
+                    className={cn(
+                      "p-2 rounded-lg text-white mb-3",
+                      menuItem.id === "toPdf" && "bg-rose-500",
+                      menuItem.id === "fromPdf" && "bg-green-500",
+                      menuItem.id === "convert" && "bg-blue-500",
+                      menuItem.id === "organize" && "bg-pink-500",
+                      menuItem.id === "edit" && "bg-indigo-500"
+                    )}>
+                    {menuItem.title}
+                  </div>
                   {menuItem.items.map((item, i) => (
                     <NavigationMenuLink
                       asChild

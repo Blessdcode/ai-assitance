@@ -11,7 +11,7 @@ const HeroPage = () => {
           <h1 className="heading1 tracking-tighter font-bold">
             Making{" "}
             <span className="bg-gradient-to-r from-rose-500 to-rose-900 bg-clip-text text-transparent">
-              PDF
+              Document
             </span>{" "}
             Easy to use
           </h1>
