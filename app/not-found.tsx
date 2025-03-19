@@ -16,7 +16,7 @@ export default function NotFound() {
       </div>
       <h2>Oops! page not found</h2>
       <p>Could not find requested resource</p>
-      <Button className="rounded-full text-white" asChild>
+      <Button className="rounded-full text-white btn-primary" asChild>
         <Link href="/">Back to Home</Link>
       </Button>
     </div>

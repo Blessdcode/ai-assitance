@@ -65,7 +65,7 @@ const menuItems = [
     title: "Organize",
     id: "organize",
     items: [
-      { name: "Merge PDF", icon: Layers, link: "/merge-pdf" },
+      { name: "Merge PDF", icon: Layers, link: "/merge-pdf"  },
       { name: "Split PDF", icon: Layers, link: "/split-pdf" },
       { name: "Rotate PDF", icon: Layers, link: "/rotate-pdf" },
       { name: "Delete PDF Pages", icon: Layers, link: "/delete-pdf-pages" },
@@ -140,11 +140,18 @@ const NavigationMenuComponent = () => {
                     <NavigationMenuLink
                       asChild
                       key={i}
-                      className="flex group  hover:bg-rose-500 hover:text-white transition">
+                      className={cn(
+                        "flex group  hover:text-white transition",
+                        menuItem.id === "toPdf" && "hover:bg-rose-500",
+                        menuItem.id === "fromPdf" && "hover:bg-green-500",
+                        menuItem.id === "convert" && "hover:bg-blue-500",
+                        menuItem.id === "organize" && "hover:bg-pink-500",
+                        menuItem.id === "edit" && "hover:bg-indigo-500"
+                      )}>
                       <div className="flex items-center gap-2">
                         <Link
                           href={item.link}
-                          className="flex items-center gap-2 px-3 py-2 rounded-md ">
+                          className="flex items-center gap-2  rounded-lg ">
                           <item.icon size={16} className="hover:text-white" />
                           {item.name}
                         </Link>

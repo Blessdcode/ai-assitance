@@ -22,7 +22,7 @@ const HeroPage = () => {
           </p>
 
           <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-            <Button asChild variant="outline">
+            <Button asChild variant="outline" className="border border-blue-500 hover:bg-blue-500 hover:text-white">
               <Link href="/payment">Start for free</Link>
             </Button>
             <Button asChild className="btn-primary">
