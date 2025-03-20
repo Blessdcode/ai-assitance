@@ -5,8 +5,8 @@ import Image from "next/image";
 
 const HeroPage = () => {
   return (
-    <section className="boxWidth marginY boxMar">
-      <div className="flex flex-col md:flex-row items-center md:items-start md:justify-center">
+    <section className="boxWidth md:h-screen">
+      <div className="flex flex-col md:flex-row items-center md:items-start md:justify-center marginY">
         <div className="flex flex-col items-center md:items-start space-y-5 w-full md:w-1/2 text-center md:text-left">
           <h1 className="heading2 tracking-tighter font-bold">
             Making{" "}
