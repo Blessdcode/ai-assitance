@@ -1,18 +1,17 @@
-import Summary from "@/components/client/summary";
-import { currentUser } from "@clerk/nextjs/server";
-import { redirect } from "next/navigation";
+import Summary from "@/components/client/summary/summary";
+import UploadPdf from "@/components/client/summary/uploadPdf";
+// import { currentUser } from "@clerk/nextjs/server";
+// import { redirect } from "next/navigation";
 
 const page = async () => {
-  const user = await currentUser();
-  console.log(user)
-
-  if (!user) {
-     redirect("/sign-in");
-  }
   return (
-    <div>
+    <section className="min-h-screen boxWidth">
       <Summary />
-    </div>
+      <UploadPdf
+        onSubmit={onSubmit}
+        
+      />
+    </section>
   );
 };
 

@@ -251,3 +251,18 @@ html {
 ::-webkit-scrollbar-track {
   /* background: #f1f1f1; */
 }
+
+@keyframes gradient-x {
+  0%,100%{
+    background-size: 200% 100%;
+    background-position: left center;
+  }
+  50%{
+    background-size: 200% 100%;
+      background-position: right center;
+  }
+
+  animate-gradient-x{
+    animation: gradient-x 3s ease infinite
+  }
+}
