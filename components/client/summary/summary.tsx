@@ -1,31 +1,26 @@
 /* eslint-disable react/no-unescaped-entities */
-import { Badge } from "@/components/ui/badge";
-import { Sparkles } from "lucide-react";
 import React from "react";
+import PdfFormUpload from "../upload/pdfFormUpload";
+import Wrapper from "@/components/custom/wrapper";
+import PdfDetails from "@/components/custom/pdfDetails";
 
 const Summary = () => {
   return (
-    <div className="flexCol flexCenter text-center gap-6">
-      <div className="relative p-[1px] overflow-hidden rounded-full bg-linear-to-r from-rose-200 via-rose-500 to-rose-800 animate-gradient-x group">
-        <Badge
-          variant={"secondary"}
-          className="relative px-6 py-2 text-base font-medium bg-white rounded-full group-hover:bg-gray-50 transition-colo">
-          <Sparkles className="h-6 w-6 mr-2 text-rose-600 animate-pulse" />
-          <p className="text-base">AI-Powered Summary</p>
-        </Badge>
-      </div>
-      <div className="capitalize text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-        Start Uploading
-        <span className="relative inline-block">
-          <span className="relative z-10 px-2">Your PDF's</span>
-          <span
-            className="absolute inset-0 bg-rose-200/50 -rotate-2 rounded-lg transform -skew-y-1"
-            aria-hidden="true"></span>
-        </span>
-      </div>
-      <div className="mt-2 text-lg leading-8 text-gray-600 max-w-2xl text-center">
-        <p>Upload your PDF and let our trained AI do the magic!</p>
-      </div>
+    <div className="space-y-7">
+      <>
+        <Wrapper
+          badgeTitle="AI-Powered Summary"
+          text="Upload your PDF and let our trained AI do the magic!"
+        />
+      </>
+      <>
+        <PdfFormUpload />
+      </>
+      <PdfDetails
+        image="/ai-summarizer-1.svg"
+        title="Automatic Summaries + AI Chat"
+        para="You provide the PDF, our document and note summarizer AI automatically gives you the overview and key points. Built-in AI chat lets you go deeper."
+      />
     </div>
   );
 };

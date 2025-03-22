@@ -2,14 +2,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import React from "react";
 
-interface UploadPdfProps {
-  onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
-}
 
-const UploadPdf = ({ onSubmit}: UploadPdfProps) => {
+
+const UploadPdf = () => {
   return (
     <div>
-      <form className="flexCol" onSubmit={onSubmit}>
+      <form className="flexCol" >
         <div className="flex justify-end items-center gap-1.5">
           <Input
             id="file"
@@ -19,7 +17,7 @@ const UploadPdf = ({ onSubmit}: UploadPdfProps) => {
             type="file"
             className=""
           />
-          <Button>Upload Pdf</Button>
+          <Button className="btn cursor-pointer">Upload PDF</Button>
         </div>
       </form>
     </div>

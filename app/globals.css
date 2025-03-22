@@ -161,6 +161,9 @@
 .btn-primary {
   @apply bg-linear-to-r from-blue-400 to-blue-600 text-white px-4 py-2 rounded-lg hover:from-blue-600 hover:to-blue-400 transition;
 }
+.btn {
+  @apply bg-linear-to-r from-rose-400 to-rose-600 text-white px-2 py-2 rounded-lg hover:from-rose-600 hover:to-rose-400 transition;
+}
 
 .btn-secondary {
   @apply border border-blue-600 text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-400 hover:text-white transition;
