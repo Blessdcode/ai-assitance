@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import { Source_Sans_3 as FontSans } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/constants/navigation";
+import Footer from "@/components/constants/footer";
 import { ClerkProvider } from "@clerk/nextjs";
+
+
 const fontSans = FontSans({
   variable: "--font-sans",
   subsets: ["latin"],
@@ -26,6 +29,7 @@ export default function RootLayout({
         <body className={`font-sans ${fontSans.variable} antialiased`}>
           <Navigation />
           {children}
+          <Footer/>
         </body>
       </html>
     </ClerkProvider>
